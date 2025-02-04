@@ -10,6 +10,19 @@ const Data = async (currency) => {
 let fromCurr = document.querySelector("#form");
 let toCurr = document.querySelector("#to");
 
+let exlogo= document.querySelector("#exlogo");
+exlogo.addEventListener("click",()=>{
+    let temp = fromCurr.value;
+    fromCurr.value = toCurr.value;
+    toCurr.value = temp; 
+    let flag1 = fromCurr.parentElement.querySelector("img");
+    let flag2 = toCurr.parentElement.querySelector("img");
+    let temp2 = flag1.src;
+    flag1.src = flag2.src;
+    flag2.src = temp2;
+
+})
+
 let dropDown = document.querySelectorAll(".flagin select");
 for (let select of dropDown) {
     for (let code in countryList) {
